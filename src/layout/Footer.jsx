@@ -104,11 +104,11 @@ const Footer = () => {
           {/* ── Brand column (wider) ─────────────────────────── */}
           <div className="sm:col-span-2 lg:col-span-4 xl:col-span-4 lg:pr-10">
             {/* Logo */}
-            <Link to="/" className="inline-block mb-5">
+            <Link to="/" className="inline-block mb-2 -ml-1">
               <img
                 src={activeLogo}
                 alt="Ditechted"
-                className="h-9 sm:h-10 w-auto object-contain transition-all duration-300"
+                className="h-8 sm:h-9 w-auto object-contain transition-all duration-300"
               />
             </Link>
 

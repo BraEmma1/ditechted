@@ -114,21 +114,20 @@ const Header = () => {
             {/* ── Logo ──────────────────────────────────────── */}
             <Link
               to="/"
-              className="flex items-center select-none group"
+              className="flex items-center select-none group -ml-1 sm:ml-0"
               aria-label="Ditechted home"
             >
               <img
                 src={activeLogo}
                 alt="Ditechted"
-                className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
             {/* ── Right side: Nav + CTA ─────────────────────── */}
             <div className="flex items-center gap-4 lg:gap-6">
-              {/* ── Desktop Navigation ────────────────────────── */}
-              <nav
-                className="hidden lg:flex items-center gap-1 p-1.5 rounded-full"
+                <nav
+                className="hidden lg:flex items-center gap-2"
                 aria-label="Main navigation"
               >
                 {NAV_LINKS.map(({ label, to }) => (
@@ -138,11 +137,15 @@ const Header = () => {
                     end={to === "/"}
                     className={({ isActive }) =>
                       [
-                        "relative px-5 py-2 text-[14px] font-semibold rounded-full",
-                        "transition-all duration-300 ease-out",
+                        "relative px-4 py-2 text-[14px] font-semibold",
+                        "transition-colors duration-300 ease-out",
                         isActive
-                          ? "bg-primary text-white shadow-md"
-                          : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800",
+                          ? "text-primary dark:text-accent"
+                          : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white",
+                        "after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[2px] after:bg-primary dark:after:bg-accent after:rounded-full after:transition-transform after:duration-300",
+                        isActive
+                          ? "after:scale-x-100"
+                          : "after:scale-x-0 hover:after:scale-x-100"
                       ].join(" ")
                     }
                   >
@@ -227,7 +230,7 @@ const Header = () => {
                 <img
                   src={activeLogo}
                   alt="Ditechted"
-                  className="h-6 w-auto object-contain"
+                  className="h-5 sm:h-6 w-auto object-contain -ml-1"
                 />
                 <button
                   onClick={() => setMenuOpen(false)}
@@ -257,12 +260,12 @@ const Header = () => {
                       onClick={() => setMenuOpen(false)}
                       className={({ isActive }) =>
                         [
-                          "flex items-center px-4 py-3 rounded-xl",
+                          "relative flex items-center px-4 py-3 rounded-xl",
                           "text-[0.9375rem] font-medium",
                           "transition-colors duration-150",
                           isActive
-                            ? "text-primary bg-blue-50 dark:bg-blue-900/30"
-                            : "text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50",
+                            ? "text-primary dark:text-accent bg-blue-50/50 dark:bg-white/5 after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-1/2 after:w-1 after:bg-primary dark:after:bg-accent after:rounded-r-md"
+                            : "text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-accent hover:bg-slate-50 dark:hover:bg-slate-800/50",
                         ].join(" ")
                       }
                     >

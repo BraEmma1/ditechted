@@ -13,6 +13,7 @@ import {
   Shield, TrendingUp, Zap,
 } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '../lib/animations';
+import ParticleBackground from './ParticleBackground';
 
 // ─── Reusable helpers ─────────────────────────────────────────
 
@@ -247,6 +248,9 @@ const Hero = () => {
         paddingBottom: '6rem',
       }}
     >
+      {/* Interactive Premium Particle Canvas */}
+      <ParticleBackground />
+
       {/* Decorative background blobs */}
       <div
         aria-hidden="true"
@@ -289,7 +293,7 @@ const Hero = () => {
             >
               We build{' '}
               <span className="text-primary">high&#8209;performance</span>{' '}
-              digital systems for modern businesses
+              digital systems
             </motion.h1>
 
             {/* Subtext */}
