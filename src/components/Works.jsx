@@ -15,31 +15,30 @@ import { Link } from 'react-router-dom';
 const PROJECTS = [
   {
     id: 1,
-    title: 'NovaPay Transaction Core',
-    description: 'Re-architected a legacy payment gateway to handle 10k+ TPS with 99.99% uptime using a cloud-native microservices approach.',
-    tags: ['Go', 'Kubernetes', 'PostgreSQL'],
-    link: '/case-studies/novapay',
-    // We use a CSS gradient + Lucide icon for a premium mockup placeholder
+    title: 'SalesFlow AI Assistant',
+    description: 'Built an AI lead qualification system that increased response speed and conversions for a fast-growing sales team.',
+    tags: ['AI Agents', 'Automation', 'CRM'],
+    link: '/case-studies/salesflow',
     bgGradient: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)',
     icon: Activity,
     accent: 'var(--brand-accent)'
   },
   {
     id: 2,
-    title: 'LogiCore AI Dispatch',
-    description: 'Built an intelligent routing platform that optimized delivery fleets across 5 countries, reducing operational costs by 24%.',
-    tags: ['Python', 'TensorFlow', 'AWS'],
-    link: '/case-studies/logicore',
+    title: 'EduCore SaaS Platform',
+    description: 'Developed a custom student management platform used across multiple institutions for streamlined operations.',
+    tags: ['SaaS', 'React', 'Node.js'],
+    link: '/case-studies/educore',
     bgGradient: 'linear-gradient(135deg, #064e3b 0%, #022c22 100%)',
     icon: Network,
     accent: '#34d399'
   },
   {
     id: 3,
-    title: 'HealthSync Data Lake',
-    description: 'Designed a HIPAA-compliant real-time data lake, unifying patient records across 40+ regional clinics into one secure dashboard.',
-    tags: ['React', 'Node.js', 'Snowflake'],
-    link: '/case-studies/healthsync',
+    title: 'RetailBoost Growth Engine',
+    description: 'Created ad funnels and high-converting landing systems that increased monthly revenue by 37% within 60 days.',
+    tags: ['Meta Ads', 'Funnels', 'Growth'],
+    link: '/case-studies/retailboost',
     bgGradient: 'linear-gradient(135deg, #4c1d95 0%, #2e1065 100%)',
     icon: Fingerprint,
     accent: '#a78bfa'
@@ -127,14 +126,14 @@ const Works = () => (
             variants={fadeInUp} 
             className="heading-l max-w-lg"
           >
-            Real systems. <span className="text-primary">Real results.</span>
+            Real Solutions.{' '}<span className="text-primary">Real Results.</span>
           </motion.h2>
           
           <motion.p 
             variants={fadeInUp} 
             className="body-lead max-w-md md:text-right"
           >
-            A selection of projects where we designed, built, and scaled high-performance systems.
+            A selection of projects where we designed, built, and scaled high-performance systems that moved the needle.
           </motion.p>
         </div>
       </motion.div>

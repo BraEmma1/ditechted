@@ -14,22 +14,22 @@ const PROCESS_STEPS = [
   {
     num: '01',
     title: 'Discovery',
-    bullets: ['Understanding business needs', 'Defining goals and KPIs', 'Initial feasibility study'],
+    bullets: ['Understanding your business goals', 'Identifying key opportunities', 'Mapping the right approach'],
   },
   {
     num: '02',
-    title: 'Planning & Architecture',
-    bullets: ['System design & modeling', 'Tech stack decisions', 'Sprint resource allocation'],
+    title: 'Strategy & Planning',
+    bullets: ['Choosing the right systems & tools', 'Building the roadmap', 'Aligning on deliverables'],
   },
   {
     num: '03',
-    title: 'Development',
-    bullets: ['Agile development cycles', 'Continuous testing (CI/CD)', 'Regular stakeholder demos'],
+    title: 'Build & Launch',
+    bullets: ['Developing high-performance solutions', 'Testing and quality assurance', 'Deploying with precision'],
   },
   {
     num: '04',
-    title: 'Deployment & Optimization',
-    bullets: ['Stress testing & launch', 'Proactive monitoring', 'Iterative continuous improvement'],
+    title: 'Optimize & Scale',
+    bullets: ['Continuous improvements', 'Data analysis & insights', 'Growth support & iteration'],
   },
 ];
 
@@ -54,14 +54,14 @@ const Process = () => (
           variants={fadeInUp} 
           className="heading-l mt-5"
         >
-          A structured approach to building scalable systems
+          How We Work
         </motion.h2>
         
         <motion.p 
           variants={fadeInUp} 
           className="body-lead mt-6 max-w-2xl"
         >
-          From discovery to deployment, we follow a clear and efficient process to deliver reliable results without the guesswork.
+          From discovery to deployment, we follow a clear, strategic process to deliver results without guesswork.
         </motion.p>
       </motion.div>
 

@@ -14,33 +14,33 @@ import { fadeInUp, staggerContainer, viewportOnce } from '../lib/animations';
 const FAQS = [
   {
     id: 1,
-    question: 'How long does a typical project take?',
-    answer: 'Timelines vary based on scope and complexity. A standard web application MVP takes 6–8 weeks, while large-scale enterprise migrations or complex AI integrations can run for 3–6 months. We define clear milestones during the initial discovery phase.',
+    question: 'How long does a project take?',
+    answer: 'Timelines vary based on scope. A website or chatbot typically takes 2–4 weeks, while a full SaaS platform or AI system can take 6–12 weeks. We define clear milestones during the discovery phase so you always know what to expect.',
   },
   {
     id: 2,
-    question: 'What technologies do you work with?',
-    answer: 'We focus on modern, scalable stacks. Our core expertise includes React, Next.js, and Node.js for software development, alongside cloud infrastructure running on AWS or Google Cloud. For data and AI, we leverage Python, TensorFlow, and modern data warehouses.',
+    question: 'Can you build custom software for my business?',
+    answer: 'Absolutely. Custom software is one of our core specialties. We build SaaS platforms, dashboards, portals, and internal tools tailored precisely to your business model, workflows, and goals.',
   },
   {
     id: 3,
-    question: 'Do you provide ongoing support after launch?',
-    answer: 'Yes. We offer fully managed post-launch retainers that cover server monitoring, performance optimization, security patching, and iterative feature development to ensure your systems remain scalable and secure.',
+    question: 'Do you provide support after launch?',
+    answer: 'Yes. We offer post-launch support retainers covering maintenance, performance monitoring, updates, and iterative improvements to ensure your systems continue to perform and grow with your business.',
   },
   {
     id: 4,
-    question: 'How do you ensure project quality and performance?',
-    answer: 'Quality is built into our routine. We enforce strict code reviews, maintain comprehensive automated testing pipelines (CI/CD), and perform rigorous load testing before launch. Performance budgets are established mapped back to your business KPIs.',
+    question: 'Can you run our ads and marketing too?',
+    answer: 'Yes. Our digital marketing services include Meta (Facebook/Instagram) ads, Google ads, social media management, and conversion-focused copywriting. We align every campaign with your business growth goals.',
   },
   {
     id: 5,
-    question: 'Can you work with our existing systems or team?',
-    answer: 'Absolutely. We frequently augment existing engineering teams or take over legacy codebases. We start with a comprehensive technical audit to understand your current architecture and identify safe paths for modernization or integration.',
+    question: 'Can AI be integrated into our current systems?',
+    answer: 'In most cases, yes. We audit your existing setup and identify the best integration points for AI — whether that\'s automating support, qualifying leads, summarising data, or triggering workflows. We work with what you already have.',
   },
   {
     id: 6,
     question: 'How do we get started?',
-    answer: 'It begins with a free initial discovery call. Reach out via our contact page to schedule a session where we’ll discuss your goals, immediate technical challenges, and see if our engineering approach is the right fit for your business.',
+    answer: 'It starts with a free discovery consultation. Reach out via our contact page to book a call. We\'ll discuss your goals, identify the right systems, and outline a clear plan forward — no commitment required.',
   },
 ];
 
@@ -138,7 +138,7 @@ const FAQ = () => {
             </motion.div>
             
             <motion.h2 variants={fadeInUp} className="heading-l mt-4">
-              Frequently asked questions
+              Frequently Asked Questions
             </motion.h2>
             
             <motion.p variants={fadeInUp} className="body-lead mt-5">

@@ -99,8 +99,8 @@ const CTA = () => (
           variants={fadeInUp}
           className="mt-6 text-[1.0625rem] text-blue-50 leading-relaxed max-w-lg font-medium"
         >
-          Let's design and build systems that move your business forward —
-          delivered fast and engineered to last.
+          Let's help you grow with AI, software, websites, and marketing
+          systems built for real results.
         </motion.p>
 
         {/* CTA Buttons */}

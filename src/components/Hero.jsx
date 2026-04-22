@@ -109,7 +109,7 @@ const HeroVisual = () => {
               <div className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
             </div>
             <span className="text-[11px] text-slate-500 ml-1.5 font-mono">
-              ditechted.dashboard
+              ditechted.systems
             </span>
             <div className="ml-auto flex items-center gap-1.5">
               <motion.div
@@ -142,9 +142,9 @@ const HeroVisual = () => {
 
             {/* Progress bars */}
             <div className="space-y-3.5">
-              <ProgressBar label="Performance Score"   value="98.6%"  width="98.6%" delay={0.6} />
-              <ProgressBar label="Response Time"       value="142 ms" width="88%"   delay={0.8} />
-              <ProgressBar label="Deploy Success Rate" value="100%"   width="100%"  delay={1.0} />
+              <ProgressBar label="Automation Efficiency" value="+68%"    width="68%"  delay={0.6} />
+              <ProgressBar label="Lead Conversion"        value="+42%"    width="42%"  delay={0.8} />
+              <ProgressBar label="Growth Readiness"       value="100%"    width="100%" delay={1.0} />
             </div>
 
             {/* Bar chart — Monthly Growth */}
@@ -182,7 +182,7 @@ const HeroVisual = () => {
 
             {/* Tag strip */}
             <div className="flex items-center gap-2 flex-wrap">
-              {['Cloud Native', 'AI-Ready', 'Zero Downtime', 'SOC 2'].map((tag, i) => (
+              {['AI Powered', 'Scalable', 'Conversion Ready', 'Secure'].map((tag, i) => (
                 <motion.span
                   key={tag}
                   initial={{ opacity: 0 }}
@@ -281,8 +281,8 @@ const Hero = () => {
           >
             {/* Eyebrow label */}
             <motion.div variants={fadeInUp}>
-              <span className="heading-s">
-                IT Consulting &amp; Digital Transformation
+              <span className="heading-s-sm inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 text-white text-[0.7rem] font-bold uppercase tracking-[0.12em] mb-8 bg-white/5 backdrop-blur-sm shadow-sm">
+                AI Systems • Software Development • Growth Solutions
               </span>
             </motion.div>
 
@@ -291,29 +291,30 @@ const Hero = () => {
               variants={fadeInUp}
               className="heading-xl mt-4 lg:mt-5"
             >
-              We build{' '}
-              <span className="text-primary">high&#8209;performance</span>{' '}
-              digital systems
+              We Build{' '}
+              <span className="text-primary">AI Systems,</span>{' '}
+              Software &amp; Growth Engines
             </motion.h1>
 
             {/* Subtext */}
             <motion.p
               variants={fadeInUp}
-              className="body-lead mt-5 lg:mt-6 max-w-[500px]"
+              className="body-lead-sm mt-5 lg:mt-6 max-w-[500px]"
             >
-              Custom software, cloud infrastructure, and AI solutions designed
-              to scale your business — built for performance and built to last.
+              From intelligent automation to custom platforms and high-converting
+              websites, we help modern businesses scale faster with technology
+              that works.
             </motion.p>
 
-            {/* Trust Indicators */}
+            {/* Trust Indicators
             <motion.div
               variants={fadeInUp}
               className="mt-8 lg:mt-10 flex items-center gap-6 md:gap-8"
             >
               {[
-                { value: '150+', label: 'Projects' },
-                { value: '99.9%', label: 'Uptime' },
-                { value: '8+', label: 'Years' },
+                { value: '150+', label: 'Projects Delivered' },
+                { value: '95%',  label: 'Client Retention' },
+                { value: '3+',   label: 'Years Experience' },
               ].map(({ value, label }, i) => (
                 <div key={label} className="flex flex-col">
                   <span className="text-[1.75rem] font-extrabold text-slate-900 dark:text-slate-100 leading-none tracking-tight">
@@ -324,12 +325,12 @@ const Hero = () => {
                   </span>
                 </div>
               ))}
-            </motion.div>
+            </motion.div> */}
 
             {/* CTA Buttons */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap gap-4 mt-8 lg:mt-12"
+              className="flex flex-col sm:flex-row gap-4 mt-8 lg:mt-12 w-full sm:w-auto"
             >
               {/* Primary */}
               <Link
@@ -337,7 +338,7 @@ const Hero = () => {
                 id="hero-cta-primary"
                 className={[
                   'inline-flex items-center justify-center gap-2',
-                  'px-7 py-3 rounded-md',
+                  'px-7 py-3 rounded-md w-full sm:w-auto',
                   'bg-primary text-white text-[0.9375rem] font-semibold',
                   'shadow-sm',
                   'transition-all duration-200',
@@ -354,7 +355,7 @@ const Hero = () => {
                 id="hero-cta-secondary"
                 className={[
                   'inline-flex items-center justify-center gap-2',
-                  'px-7 py-3 rounded-md',
+                  'px-7 py-3 rounded-md w-full sm:w-auto',
                   'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[0.9375rem] font-semibold',
                   'border border-slate-200 dark:border-slate-700',
                   'transition-all duration-200',

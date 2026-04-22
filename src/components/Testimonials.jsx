@@ -15,30 +15,30 @@ const TESTIMONIALS = [
   {
     id: 1,
     quote:
-      "Ditechted completely transformed our backend infrastructure. We went from constant downtime to 99.9% uptime within 60 days. Their team's depth of expertise is genuinely world-class.",
+      'Ditechted helped us automate major parts of our operations and improve lead conversion within weeks. It was exactly what we needed.',
     name: 'Sarah Mitchell',
-    role: 'CTO',
-    company: 'NovaPay',
+    role: 'Head of Operations',
+    company: 'SalesFlow',
     avatar: 'SM',
     accent: 'var(--brand-primary)',
   },
   {
     id: 2,
     quote:
-      "The AI automation system they built reduced our manual processing time by 70%. They didn't just ship code — they understood our business and built something that actually scales.",
+      'They built a platform that gave us structure, speed, and room to scale. Our team operates completely differently now.',
     name: 'James Okafor',
-    role: 'Head of Operations',
-    company: 'LogiCore Systems',
+    role: 'Founder & CEO',
+    company: 'EduCore',
     avatar: 'JO',
     accent: '#7c3aed',
   },
   {
     id: 3,
     quote:
-      "Working with Ditechted felt like having a senior engineering team embedded in our company. Fast, strategic, and incredibly reliable. They delivered on every promise.",
+      'Professional team, strong execution, and real business results. Ditechted delivered on every promise.',
     name: 'Priya Sharma',
-    role: 'Founder & CEO',
-    company: 'Finvela',
+    role: 'Marketing Director',
+    company: 'RetailBoost',
     avatar: 'PS',
     accent: '#059669',
   },
@@ -107,12 +107,11 @@ const Testimonials = () => (
           <span className="heading-s">Testimonials</span>
         </motion.div>
         <motion.h2 variants={fadeInUp} className="heading-l mt-4">
-          Trusted by teams that value{' '}
-          <span className="text-primary">performance</span>
+          Trusted by Businesses{' '}
+          <span className="text-primary">Ready to Grow</span>
         </motion.h2>
         <motion.p variants={fadeInUp} className="body-lead mt-5">
-          Don't take our word for it — here's what the teams we've worked
-          with have to say.
+          Here's what businesses we've worked with have to say about their results.
         </motion.p>
       </motion.div>
 

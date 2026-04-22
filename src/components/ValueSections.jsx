@@ -421,12 +421,12 @@ const ValueSection = ({ label, title, description, bullets, Visual, reversed, bg
 // ─── Section data ─────────────────────────────────────────────
 const SECTION_1 = {
   label:       'Scalable Systems',
-  title:       'Build systems that scale with your business',
-  description: 'We engineer robust digital foundations built to grow with you — from startup to enterprise scale, without technical debt slowing you down.',
+  title:       'Systems Built to Scale',
+  description: 'We create reliable digital systems that grow with your business — from startup stage to full operational scale, without technical debt slowing you down.',
   bullets: [
     { icon: Layers, text: 'Scalable architecture design' },
-    { icon: Code2,  text: 'Clean, maintainable codebases' },
-    { icon: Zap,    text: 'Performance-first engineering' },
+    { icon: Code2,  text: 'Fast, secure platforms' },
+    { icon: Zap,    text: 'Clean, maintainable code' },
   ],
   Visual:   CodeEditorVisual,
   reversed: false,
@@ -434,13 +434,13 @@ const SECTION_1 = {
 };
 
 const SECTION_2 = {
-  label:       'Operations & DevOps',
-  title:       'Optimize and scale your operations',
-  description: 'Streamline your infrastructure and automate your workflows with cloud-native tooling and intelligent CI/CD that keeps your business moving fast.',
+  label:       'Operations & Automation',
+  title:       'Automate Operations & Increase Efficiency',
+  description: 'Reduce wasted time and improve performance with intelligent systems, process automation, and connected workflows built for speed.',
   bullets: [
-    { icon: Cloud,     text: 'Cloud-native deployment' },
-    { icon: GitBranch, text: 'DevOps and CI/CD pipelines' },
-    { icon: Cpu,       text: 'Intelligent automation systems' },
+    { icon: Cloud,     text: 'Workflow automation' },
+    { icon: GitBranch, text: 'AI task systems' },
+    { icon: Cpu,       text: 'Operational dashboards & CRM integrations' },
   ],
   Visual:   PipelineVisual,
   reversed: true,

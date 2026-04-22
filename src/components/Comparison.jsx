@@ -13,21 +13,21 @@ import { Link } from 'react-router-dom';
 
 // ─── Data ─────────────────────────────────────────────────────
 const TRADITIONAL_ITEMS = [
-  'Slow, rigid development cycles',
-  'On-premise, inflexible infrastructure',
-  'Reactive, break-fix support model',
-  'Hard ceiling on scalability',
-  'High operational overhead',
-  'Siloed teams and slow delivery',
+  'Generic websites with no strategy',
+  'Manual, time-consuming processes',
+  'Disconnected tools that don\'t talk',
+  'Weak marketing results',
+  'Slow response and support',
+  'One-size-fits-all solutions',
 ];
 
 const MODERN_ITEMS = [
-  'Agile, iterative development sprints',
-  'Cloud-native, elastic infrastructure',
-  'Proactive monitoring & incident response',
-  'Infinitely scalable architecture',
-  'Optimised for cost efficiency',
-  'Unified teams with fast deployment',
+  'AI-powered systems that work for you',
+  'Automation-first operations',
+  'Growth-focused websites that convert',
+  'Integrated business tools & workflows',
+  'Fast strategic execution & support',
+  'Custom-built for your business model',
 ];
 
 // ─── Animation factories ──────────────────────────────────────
@@ -99,12 +99,11 @@ const Comparison = () => (
           <span className="heading-s">Why Ditechted</span>
         </motion.div>
         <motion.h2 variants={fadeInUp} className="heading-l mt-4">
-          Traditional IT vs{' '}
-          <span className="text-primary">Modern IT Solutions</span>
+          Traditional Agencies vs{' '}
+          <span className="text-primary">Ditechted</span>
         </motion.h2>
         <motion.p variants={fadeInUp} className="body-lead mt-5">
-          The difference between outdated systems and scalable engineering is more
-          than technology — it's a philosophy shift.
+          The difference between an outdated agency and a results-driven technology partner is more than tools — it's a systems mindset.
         </motion.p>
       </motion.div>
 
@@ -124,7 +123,7 @@ const Comparison = () => (
             <p className="text-[0.7rem] text-slate-400 font-semibold uppercase tracking-widest mb-1">
               The Old Way
             </p>
-            <h3 className="text-xl font-bold text-slate-400">Traditional IT</h3>
+            <h3 className="text-xl font-bold text-slate-400">Traditional Agencies</h3>
           </div>
 
           {/* Items */}
@@ -170,8 +169,8 @@ const Comparison = () => (
                 The Ditechted Way
               </p>
               <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
-                Modern IT{' '}
-                <span className="text-primary">(Ditechted)</span>
+                The Ditechted{' '}
+                <span className="text-primary">Way</span>
               </h3>
             </div>
             {/* Recommended badge */}

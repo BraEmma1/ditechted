@@ -19,32 +19,46 @@ import { Link } from 'react-router-dom';
 
 const SERVICES_DATA = [
   {
-    id: 'web-app',
-    title: 'Web & Application Development',
-    description: 'Scalable, high-performance web applications and custom software tailored to your specific business requirements.',
-    icon: MonitorSmartphone,
-    link: '/services#web-app',
+    id: 'ai-agents',
+    title: 'AI Agent Systems',
+    description: 'Deploy AI agents for support, lead handling, internal operations, and customer workflows.',
+    icon: Bot,
+    link: '/services#ai-agents',
   },
   {
-    id: 'cloud-devops',
-    title: 'Cloud & DevOps Engineering',
-    description: 'Secure, robust cloud infrastructure and automated CI/CD pipelines for accelerated deployment and supreme reliability.',
-    icon: CloudCog,
-    link: '/services#cloud-devops',
+    id: 'saas-dev',
+    title: 'Custom SaaS Development',
+    description: 'Build scalable platforms, dashboards, portals, and web software tailored to your business model.',
+    icon: MonitorSmartphone,
+    link: '/services#saas-dev',
   },
   {
     id: 'ai-automation',
-    title: 'AI & Automation Solutions',
-    description: 'Intelligent automation systems and AI integrations designed to optimize workflows and reduce operational costs.',
-    icon: Bot,
+    title: 'AI Automation Consulting',
+    description: 'Replace repetitive manual tasks with streamlined AI-powered workflows that save time and reduce costs.',
+    icon: CloudCog,
     link: '/services#ai-automation',
   },
   {
-    id: 'it-consulting',
-    title: 'IT Consulting & Strategy',
-    description: 'Strategic technology guidance to align your IT infrastructure with your long-term business goals for sustainable growth.',
+    id: 'chatbot',
+    title: 'AI Chatbot Development',
+    description: 'Custom AI chatbots for websites, WhatsApp, customer service, bookings, and sales.',
     icon: LineChart,
-    link: '/services#it-consulting',
+    link: '/services#chatbot',
+  },
+  {
+    id: 'web-design',
+    title: 'Website Design & Development',
+    description: 'Modern websites designed for trust, speed, conversions, and long-term growth.',
+    icon: MonitorSmartphone,
+    link: '/services#web-design',
+  },
+  {
+    id: 'digital-marketing',
+    title: 'Digital Marketing',
+    description: 'Social media management, Meta ads, Google ads, and persuasive copywriting that drives results.',
+    icon: LineChart,
+    link: '/services#digital-marketing',
   },
 ];
 
@@ -91,19 +105,19 @@ const Services = () => {
           className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 lg:mb-20"
         >
           <motion.div variants={fadeInUp}>
-             <span className="heading-s">Our Services</span>
+             <span className="heading-s">Our Core Solutions</span>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
             className="heading-l mt-5"
           >
-            Engineering solutions that power <span className="text-primary">modern businesses</span>
+            End-to-end systems built for{' '}<span className="text-primary">growth</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="body-lead mt-6 max-w-2xl"
           >
-            We deliver end-to-end technology services designed to maximize efficiency, scale operations, and drive continuous innovation.
+            End-to-end systems built to increase efficiency, revenue, and business growth.
           </motion.p>
         </motion.div>
 
@@ -112,7 +126,7 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8"
         >
           {SERVICES_DATA.map((service) => (
             <ServiceCard key={service.id} {...service} />

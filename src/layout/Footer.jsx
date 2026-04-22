@@ -22,10 +22,11 @@ const COMPANY_LINKS = [
 ];
 
 const SERVICES_LINKS = [
-  { label: 'Web Development', to: '/services#web-app' },
-  { label: 'Cloud & DevOps',  to: '/services#cloud-devops' },
-  { label: 'AI & Automation', to: '/services#ai-automation' },
-  { label: 'IT Consulting',   to: '/services#it-consulting' },
+  { label: 'AI Agent Systems',           to: '/services#ai-agents' },
+  { label: 'Custom SaaS Development',    to: '/services#saas-dev' },
+  { label: 'AI Chatbot Development',     to: '/services#chatbot' },
+  { label: 'Website Design & Dev',       to: '/services#web-design' },
+  { label: 'Digital Marketing',          to: '/services#digital-marketing' },
 ];
 
 const RESOURCES_LINKS = [
@@ -114,7 +115,7 @@ const Footer = () => {
 
             {/* Tagline */}
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-[300px]">
-              IT consulting and digital transformation solutions for modern businesses.
+              Ditechted builds AI systems, software platforms, websites, and digital growth solutions for ambitious businesses.
             </p>
 
             {/* Social Icons */}

@@ -133,9 +133,9 @@ a {
    ============================================================ */
 
 .heading-xl {
-  font-size: clamp(2.7rem, 5.3vw, 4.55rem); /* 43px → 73px */
+  font-size: clamp(2.4rem, 5.3vw, 4.55rem); /* 43px → 73px */
   font-weight: 900;
-  line-height: 1.04;
+  line-height: 1.24;
   letter-spacing: -0.035em;
   color: var(--text-main);
   transition: color 0.3s ease;
@@ -144,7 +144,7 @@ a {
 .heading-l {
   font-size: clamp(2rem, 3.8vw, 3.25rem);   /* 32px → 52px */
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   color: var(--text-main);
   transition: color 0.3s ease;
@@ -167,7 +167,14 @@ a {
   text-transform: uppercase;
   color: var(--brand-primary);
 }
-
+.heading-s-sm {
+  font-size: 0.6rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-primary);
+}
 .body-text {
   font-size: 1.0625rem;                      /* 17px */
   font-weight: 400;
@@ -178,6 +185,14 @@ a {
 
 .body-lead {
   font-size: 1.125rem;                       /* 18px — readable at all widths */
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text-lead);
+  transition: color 0.3s ease;
+}
+
+.body-lead-sm {
+  font-size: 1rem;                       /* 18px — readable at all widths */
   font-weight: 400;
   line-height: 1.75;
   color: var(--text-lead);
