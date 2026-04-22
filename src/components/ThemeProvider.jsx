@@ -17,17 +17,22 @@ export function ThemeProvider({
 
   useEffect(() => {
     const root = window.document.documentElement;
-
     root.classList.remove("light", "dark");
 
     if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      
+      const applySystemTheme = () => {
+        root.classList.remove("light", "dark");
+        root.classList.add(mediaQuery.matches ? "dark" : "light");
+      };
 
-      root.classList.add(systemTheme);
-      return;
+      // Apply immediately
+      applySystemTheme();
+
+      // Listen for OS theme changes
+      mediaQuery.addEventListener("change", applySystemTheme);
+      return () => mediaQuery.removeEventListener("change", applySystemTheme);
     }
 
     root.classList.add(theme);

@@ -120,7 +120,7 @@ const Header = () => {
               <img
                 src={activeLogo}
                 alt="Ditechted"
-                className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
@@ -152,7 +152,7 @@ const Header = () => {
               </nav>
 
               {/* ── Desktop CTA + Mobile Hamburger ────────────── */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5 sm:gap-4">
                 <ThemeToggle />
                 
                 {/* CTA Button */}
