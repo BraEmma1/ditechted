@@ -46,7 +46,7 @@ const BulletItem = ({ icon: Icon, text }) => (
     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 text-primary transition-all duration-200 group-hover:bg-primary group-hover:text-white">
       <Icon size={18} strokeWidth={2} />
     </div>
-    <span className="text-[0.9375rem] font-medium text-slate-700 group-hover:text-slate-900 transition-colors duration-200">
+    <span className="text-[0.9375rem] font-medium text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-200">
       {text}
     </span>
   </motion.div>
@@ -59,7 +59,7 @@ const FloatBadge = ({ icon: Icon, label, value, iconBg, delay, style }) => (
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{ delay, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
     viewport={viewportOnce}
-    className="absolute flex items-center gap-2.5 bg-white rounded-2xl px-3.5 py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-slate-100"
+    className="absolute flex items-center gap-2.5 bg-white dark:bg-slate-800 rounded-2xl px-3.5 py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-slate-100 dark:border-slate-700"
     style={style}
   >
     <div
@@ -69,10 +69,10 @@ const FloatBadge = ({ icon: Icon, label, value, iconBg, delay, style }) => (
       <Icon size={14} strokeWidth={2.5} className="text-white" />
     </div>
     <div>
-      <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider leading-none mb-0.5">
+      <p className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider leading-none mb-0.5">
         {label}
       </p>
-      <p className="text-sm font-bold text-slate-800 leading-tight">{value}</p>
+      <p className="text-sm font-bold text-slate-800 dark:text-slate-100 leading-tight">{value}</p>
     </div>
   </motion.div>
 );
@@ -186,7 +186,7 @@ const CodeEditorVisual = () => (
         icon={Zap}
         label="Lighthouse"
         value="100 / 100"
-        iconBg="#0071C5"
+        iconBg="var(--brand-primary)"
         delay={0.7}
         style={{ top: '-18px', right: '-30px', zIndex: 20 }}
       />
@@ -197,7 +197,7 @@ const CodeEditorVisual = () => (
 // ─── VISUAL 2: DevOps pipeline ────────────────────────────────
 const PipelineVisual = () => {
   const stages = [
-    { icon: Code2,        label: 'Code',   color: '#0071C5', bg: 'rgba(0,113,197,0.15)',  border: 'rgba(0,113,197,0.3)'  },
+    { icon: Code2,        label: 'Code',   color: 'var(--brand-primary)', bg: 'rgba(0,113,197,0.15)',  border: 'rgba(0,113,197,0.3)'  },
     { icon: FlaskConical, label: 'Test',   color: '#7c3aed', bg: 'rgba(124,58,237,0.15)', border: 'rgba(124,58,237,0.3)' },
     { icon: Package,      label: 'Build',  color: '#d97706', bg: 'rgba(217,119,6,0.15)',  border: 'rgba(217,119,6,0.3)'  },
     { icon: Server,       label: 'Deploy', color: '#059669', bg: 'rgba(5,150,105,0.15)',  border: 'rgba(5,150,105,0.3)'  },
@@ -206,7 +206,7 @@ const PipelineVisual = () => {
   const logs = [
     { text: '✓  Dependencies installed',      color: '#4ade80', delay: 0.6 },
     { text: '✓  47 tests passed (0 failed)',   color: '#4ade80', delay: 0.8 },
-    { text: '↑  Building Docker image...',     color: '#00C7FC', delay: 1.0 },
+    { text: '↑  Building Docker image...',     color: 'var(--brand-accent)', delay: 1.0 },
     { text: '⚡  Deploying to production...',  color: '#facc15', delay: 1.2 },
   ];
 
@@ -313,7 +313,7 @@ const PipelineVisual = () => {
                 <span className="text-[10px] text-slate-400 font-medium">Overall Progress</span>
                 <span
                   className="text-[10px] font-mono font-bold"
-                  style={{ color: '#00C7FC' }}
+                  style={{ color: 'var(--brand-accent)' }}
                 >
                   78%
                 </span>
@@ -328,7 +328,7 @@ const PipelineVisual = () => {
                   transition={{ delay: 0.8, duration: 1.5, ease: 'easeOut' }}
                   viewport={viewportOnce}
                   className="h-full rounded-full"
-                  style={{ background: 'linear-gradient(90deg, #0071C5, #00C7FC)' }}
+                  style={{ background: 'linear-gradient(90deg, var(--brand-primary), var(--brand-accent))' }}
                 />
               </div>
             </div>
@@ -348,7 +348,7 @@ const PipelineVisual = () => {
           icon={RefreshCw}
           label="Deployments"
           value="3× per day avg."
-          iconBg="#0071C5"
+          iconBg="var(--brand-primary)"
           delay={0.7}
           style={{ bottom: '-20px', left: '-30px', zIndex: 20 }}
         />
@@ -430,7 +430,7 @@ const SECTION_1 = {
   ],
   Visual:   CodeEditorVisual,
   reversed: false,
-  bg:       'bg-white',
+  bg:       'bg-white dark:bg-slate-900',
 };
 
 const SECTION_2 = {
@@ -444,7 +444,7 @@ const SECTION_2 = {
   ],
   Visual:   PipelineVisual,
   reversed: true,
-  bg:       'bg-slate-50',
+  bg:       'bg-slate-50 dark:bg-slate-900',
 };
 
 // ─── Default export ───────────────────────────────────────────

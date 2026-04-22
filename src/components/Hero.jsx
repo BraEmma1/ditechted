@@ -22,7 +22,7 @@ const StatBadge = ({ icon: Icon, label, value, iconBg, delay, style }) => (
     initial={{ opacity: 0, scale: 0.8, y: 10 }}
     animate={{ opacity: 1, scale: 1, y: 0 }}
     transition={{ delay, duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-    className="absolute flex items-center gap-2.5 bg-white/95 backdrop-blur-sm rounded-2xl px-3.5 py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.13)] border border-white"
+    className="absolute flex items-center gap-2.5 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl px-3.5 py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.13)] border border-white dark:border-slate-700"
     style={style}
   >
     <div
@@ -35,7 +35,7 @@ const StatBadge = ({ icon: Icon, label, value, iconBg, delay, style }) => (
       <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider leading-none mb-0.5">
         {label}
       </p>
-      <p className="text-sm font-bold text-slate-800 leading-tight">{value}</p>
+      <p className="text-sm font-bold text-slate-800 dark:text-slate-100 leading-tight">{value}</p>
     </div>
   </motion.div>
 );
@@ -45,7 +45,7 @@ const ProgressBar = ({ label, value, width, delay }) => (
   <div>
     <div className="flex justify-between mb-1.5">
       <span className="text-[11px] text-slate-400 font-medium">{label}</span>
-      <span className="text-[11px] font-mono font-bold" style={{ color: '#00C7FC' }}>{value}</span>
+      <span className="text-[11px] font-mono font-bold" style={{ color: 'var(--brand-accent)' }}>{value}</span>
     </div>
     <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
       <motion.div
@@ -53,7 +53,7 @@ const ProgressBar = ({ label, value, width, delay }) => (
         animate={{ width }}
         transition={{ delay, duration: 1.2, ease: 'easeOut' }}
         className="h-full rounded-full"
-        style={{ background: 'linear-gradient(90deg, #0071C5, #00C7FC)' }}
+        style={{ background: 'linear-gradient(90deg, var(--brand-primary), var(--brand-accent))' }}
       />
     </div>
   </div>
@@ -78,7 +78,7 @@ const HeroVisual = () => {
 
       {/* Subtle dot-grid pattern */}
       <div
-        className="absolute inset-0 opacity-40 pointer-events-none"
+        className="absolute inset-0 opacity-40 dark:opacity-20 pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(circle, #cbd5e1 1px, transparent 1px)',
           backgroundSize: '22px 22px',
@@ -133,7 +133,7 @@ const HeroVisual = () => {
               </div>
               <div className="text-right">
                 <p className="text-[10px] text-slate-500 font-medium">Global Uptime</p>
-                <p className="text-sm font-bold font-mono" style={{ color: '#00C7FC' }}>
+                <p className="text-sm font-bold font-mono" style={{ color: 'var(--brand-accent)' }}>
                   99.9%
                 </p>
               </div>
@@ -170,7 +170,7 @@ const HeroVisual = () => {
                         borderRadius: '3px 3px 0 0',
                         background:
                           i === 5
-                            ? 'linear-gradient(to top, #0071C5, #00C7FC)'
+                            ? 'linear-gradient(to top, var(--brand-primary), var(--brand-accent))'
                             : 'rgba(0, 113, 197, 0.22)',
                       }}
                     />
@@ -190,7 +190,7 @@ const HeroVisual = () => {
                   className="text-[10px] font-semibold px-2.5 py-1 rounded-full"
                   style={{
                     background: 'rgba(0,113,197,0.18)',
-                    color: '#00C7FC',
+                    color: 'var(--brand-accent)',
                     border: '1px solid rgba(0,199,252,0.2)',
                   }}
                 >
@@ -217,7 +217,7 @@ const HeroVisual = () => {
           icon={TrendingUp}
           label="Client Growth"
           value="+42% YoY"
-          iconBg="#0071C5"
+          iconBg="var(--brand-primary)"
           delay={1.2}
           style={{ bottom: '-20px', right: '-52px', zIndex: 20 }}
         />
@@ -241,11 +241,10 @@ const HeroVisual = () => {
 const Hero = () => {
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden bg-[linear-gradient(160deg,#f5f9ff_0%,#ffffff_55%,#f0f7ff_100%)] dark:bg-[linear-gradient(160deg,#0f172a_0%,#0c1624_55%,#0f172a_100%)]"
       style={{
         paddingTop: '5rem',
         paddingBottom: '6rem',
-        background: 'linear-gradient(160deg, #f5f9ff 0%, #ffffff 55%, #f0f7ff 100%)',
       }}
     >
       {/* Decorative background blobs */}
@@ -313,10 +312,10 @@ const Hero = () => {
                 { value: '8+', label: 'Years' },
               ].map(({ value, label }, i) => (
                 <div key={label} className="flex flex-col">
-                  <span className="text-[1.75rem] font-extrabold text-slate-900 leading-none tracking-tight">
+                  <span className="text-[1.75rem] font-extrabold text-slate-900 dark:text-slate-100 leading-none tracking-tight">
                     {value}
                   </span>
-                  <span className="text-sm text-slate-500 mt-1.5 font-medium">
+                  <span className="text-sm text-slate-500 dark:text-slate-400 mt-1.5 font-medium">
                     {label}
                   </span>
                 </div>
@@ -352,10 +351,10 @@ const Hero = () => {
                 className={[
                   'inline-flex items-center justify-center gap-2',
                   'px-7 py-3 rounded-md',
-                  'bg-white text-slate-700 text-[0.9375rem] font-semibold',
-                  'border border-slate-200',
+                  'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[0.9375rem] font-semibold',
+                  'border border-slate-200 dark:border-slate-700',
                   'transition-all duration-200',
-                  'hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900',
+                  'hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-white',
                   'active:scale-95',
                 ].join(' ')}
               >

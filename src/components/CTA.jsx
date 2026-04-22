@@ -18,7 +18,7 @@ const CTA = () => (
     className="relative overflow-hidden"
     style={{
       paddingBlock: '9rem',
-      background: 'linear-gradient(135deg, #0062AD 0%, #0071C5 60%, #00C7FC 100%)',
+      background: 'linear-gradient(135deg, var(--color-support) 0%, var(--brand-primary) 60%, var(--brand-accent) 100%)',
       backgroundSize: '200% 200%',
     }}
     animate={{ backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'] }}

@@ -16,6 +16,9 @@ import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/Logos/DITECTED-14.png";
+import logoDark from "../assets/Logos/DITECTED-15.png";
+import { ThemeToggle } from "../components/ThemeToggle";
+import { useTheme } from "../components/ThemeProvider";
 
 // ─── Navigation links ─────────────────────────────────────────
 const NAV_LINKS = [
@@ -59,6 +62,13 @@ const backdropVariants = {
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme } = useTheme();
+
+  // Resolve which logo to show
+  const isDark =
+    theme === "dark" ||
+    (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  const activeLogo = isDark ? logoDark : logo;
 
   // Scroll detection → toggle frosted glass
   useEffect(() => {
@@ -95,7 +105,7 @@ const Header = () => {
           "fixed top-0 left-0 right-0 z-50",
           "transition-all duration-300 ease-in-out border-b",
           scrolled
-            ? "bg-white/70 backdrop-blur-xl border-slate-200/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)]"
+            ? "bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-slate-200/50 dark:border-slate-800/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] dark:shadow-none"
             : "bg-transparent border-transparent py-2",
         ].join(" ")}
       >
@@ -108,9 +118,9 @@ const Header = () => {
               aria-label="Ditechted home"
             >
               <img
-                src={logo}
+                src={activeLogo}
                 alt="Ditechted"
-                className="h-8 w-80 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
@@ -132,7 +142,7 @@ const Header = () => {
                         "transition-all duration-300 ease-out",
                         isActive
                           ? "bg-primary text-white shadow-md"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100",
+                          : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800",
                       ].join(" ")
                     }
                   >
@@ -143,6 +153,8 @@ const Header = () => {
 
               {/* ── Desktop CTA + Mobile Hamburger ────────────── */}
               <div className="flex items-center gap-3">
+                <ThemeToggle />
+                
                 {/* CTA Button */}
                 <Link
                   to="/contact"
@@ -164,8 +176,8 @@ const Header = () => {
                   onClick={() => setMenuOpen(true)}
                   className={[
                     "lg:hidden flex items-center justify-center",
-                    "w-10 h-10 rounded-full bg-white/80 border border-slate-200 text-slate-700 shadow-sm",
-                    "hover:bg-slate-50 transition-all duration-200",
+                    "w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm",
+                    "hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-200",
                     "active:scale-95"
                   ].join(" ")}
                   aria-label="Open navigation menu"
@@ -205,21 +217,21 @@ const Header = () => {
               className={[
                 "fixed top-0 right-0 bottom-0 z-50",
                 "w-80 max-w-[85vw]",
-                "bg-white flex flex-col",
+                "bg-white dark:bg-slate-900 flex flex-col",
                 "shadow-2xl lg:hidden",
               ].join(" ")}
               aria-label="Mobile navigation"
             >
               {/* Panel top bar */}
-              <div className="flex items-center justify-between px-6 h-20 border-b border-slate-100 shrink-0">
+              <div className="flex items-center justify-between px-6 h-20 border-b border-slate-100 dark:border-slate-800 shrink-0">
                 <img
-                  src={logo}
+                  src={activeLogo}
                   alt="Ditechted"
-                  className="h-1 w-auto object-contain"
+                  className="h-6 w-auto object-contain"
                 />
                 <button
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center justify-center w-9 h-9 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors"
+                  className="flex items-center justify-center w-9 h-9 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                   aria-label="Close navigation menu"
                 >
                   <X size={20} strokeWidth={2} />
@@ -249,8 +261,8 @@ const Header = () => {
                           "text-[0.9375rem] font-medium",
                           "transition-colors duration-150",
                           isActive
-                            ? "text-primary bg-blue-50"
-                            : "text-slate-700 hover:text-primary hover:bg-slate-50",
+                            ? "text-primary bg-blue-50 dark:bg-blue-900/30"
+                            : "text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50",
                         ].join(" ")
                       }
                     >

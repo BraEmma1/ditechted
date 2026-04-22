@@ -22,7 +22,7 @@ const PROJECTS = [
     // We use a CSS gradient + Lucide icon for a premium mockup placeholder
     bgGradient: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)',
     icon: Activity,
-    accent: '#00C7FC'
+    accent: 'var(--brand-accent)'
   },
   {
     id: 2,
@@ -50,10 +50,10 @@ const PROJECTS = [
 const ProjectCard = ({ title, description, tags, link, bgGradient, icon: Icon, accent }) => (
   <motion.div
     variants={fadeInUp}
-    className="group relative flex flex-col h-full bg-white rounded-2xl border border-slate-100 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,113,197,0.12)] overflow-hidden"
+    className="group relative flex flex-col h-full bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-none transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,113,197,0.12)] overflow-hidden"
   >
     {/* Visual Mockup Area */}
-    <div className="relative h-56 w-full overflow-hidden bg-slate-100 flex items-center justify-center p-6">
+    <div className="relative h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-900 flex items-center justify-center p-6">
       {/* Background layer */}
       <div 
         className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-110"
@@ -79,7 +79,7 @@ const ProjectCard = ({ title, description, tags, link, bgGradient, icon: Icon, a
       {/* Tech Tags */}
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map(tag => (
-          <span key={tag} className="px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 rounded-md">
+          <span key={tag} className="px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 rounded-md">
             {tag}
           </span>
         ))}
@@ -107,7 +107,7 @@ const ProjectCard = ({ title, description, tags, link, bgGradient, icon: Icon, a
 
 // ─── Section ──────────────────────────────────────────────────
 const Works = () => (
-  <section className="section bg-white" id="works">
+  <section className="section bg-white dark:bg-slate-900" id="works">
     <div className="container-site">
 
       {/* Section header */}
@@ -165,10 +165,10 @@ const Works = () => (
           className={[
             'inline-flex items-center gap-2.5',
             'px-7 py-3.5 rounded-xl',
-            'bg-slate-50 text-slate-800 text-[0.9375rem] font-semibold',
-            'border border-slate-200',
+            'bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-[0.9375rem] font-semibold',
+            'border border-slate-200 dark:border-slate-700',
             'transition-all duration-300',
-            'hover:border-slate-300 hover:bg-slate-100 hover:scale-105',
+            'hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 hover:scale-105',
             'active:scale-95',
           ].join(' ')}
         >

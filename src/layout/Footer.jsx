@@ -11,6 +11,8 @@ import {
   Globe, Mail, Phone, MapPin,
 } from 'lucide-react';
 import logo from '../assets/Logos/DITECTED-14.png';
+import logoDark from '../assets/Logos/DITECTED-15.png';
+import { useTheme } from '../components/ThemeProvider';
 
 // ─── Link data ────────────────────────────────────────────────
 const COMPANY_LINKS = [
@@ -67,7 +69,7 @@ const CONTACT_INFO = [
 
 // ─── Reusable column heading ──────────────────────────────────
 const ColHeading = ({ children }) => (
-  <h4 className="text-white text-sm font-semibold mb-5 tracking-wide">
+  <h4 className="text-slate-900 dark:text-white text-sm font-semibold mb-5 tracking-wide">
     {children}
   </h4>
 );
@@ -77,7 +79,7 @@ const FooterLink = ({ to, children }) => (
   <li>
     <Link
       to={to}
-      className="text-sm text-slate-500 hover:text-accent transition-colors duration-200"
+      className="text-sm text-slate-600 dark:text-slate-500 hover:text-primary dark:hover:text-accent transition-colors duration-200"
     >
       {children}
     </Link>
@@ -85,133 +87,136 @@ const FooterLink = ({ to, children }) => (
 );
 
 // ─── Footer ───────────────────────────────────────────────────
-const Footer = () => (
-  <footer
-    className="border-t border-white/5"
-    style={{ background: '#09090f' }}
-  >
-    {/* ── Top grid ─────────────────────────────────────────── */}
-    <div className="container-site pt-16 pb-14">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+const Footer = () => {
+  const { theme } = useTheme();
+  const isDark =
+    theme === "dark" ||
+    (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  const activeLogo = isDark ? logoDark : logo;
 
-        {/* ── Column 1: Brand ──────────────────────────────── */}
-        <div className="sm:col-span-2 lg:col-span-2 lg:pr-12">
-          {/* Logo */}
-          <Link to="/" className="inline-block">
-            <img
-              src={logo}
-              alt="Ditechted"
-              style={{ height: '36px', width: 'auto', display: 'block' }}
-            />
-          </Link>
+  return (
+    <footer className="border-t border-slate-200 dark:border-white/5 bg-white dark:bg-[#09090f] transition-colors duration-300">
 
-          {/* Description */}
-          <p className="mt-4 text-sm text-slate-500 leading-relaxed max-w-[280px]">
-            IT consulting and digital transformation solutions for modern businesses.
-          </p>
+      {/* ── Main content ─────────────────────────────────────── */}
+      <div className="container-site pt-14 pb-12 md:pt-16 md:pb-14 lg:pt-20 lg:pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-y-10 gap-x-6 lg:gap-x-8">
 
-          {/* Social Icons */}
-          <div className="flex items-center gap-4 mt-7">
-            {SOCIAL_LINKS.map(({ icon: Icon, label, href }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="text-slate-600 hover:text-accent transition-all duration-200 hover:scale-110"
-              >
-                <Icon size={20} strokeWidth={1.75} />
-              </a>
-            ))}
+          {/* ── Brand column (wider) ─────────────────────────── */}
+          <div className="sm:col-span-2 lg:col-span-4 xl:col-span-4 lg:pr-10">
+            {/* Logo */}
+            <Link to="/" className="inline-block mb-5">
+              <img
+                src={activeLogo}
+                alt="Ditechted"
+                className="h-9 sm:h-10 w-auto object-contain transition-all duration-300"
+              />
+            </Link>
+
+            {/* Tagline */}
+            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-[300px]">
+              IT consulting and digital transformation solutions for modern businesses.
+            </p>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-3 mt-6">
+              {SOCIAL_LINKS.map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-accent hover:border-primary dark:hover:border-accent transition-all duration-200 hover:scale-105"
+                >
+                  <Icon size={17} strokeWidth={1.75} />
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* ── Column 2: Company ────────────────────────────── */}
-        <div>
-          <ColHeading>Company</ColHeading>
-          <ul className="space-y-3">
-            {COMPANY_LINKS.map(({ label, to }) => (
-              <FooterLink key={label} to={to}>{label}</FooterLink>
-            ))}
-          </ul>
-        </div>
-
-        {/* ── Column 3: Services ───────────────────────────── */}
-        <div>
-          <ColHeading>Services</ColHeading>
-          <ul className="space-y-3">
-            {SERVICES_LINKS.map(({ label, to }) => (
-              <FooterLink key={label} to={to}>{label}</FooterLink>
-            ))}
-          </ul>
-        </div>
-
-        {/* ── Column 4: Resources + Contact ────────────────── */}
-        <div className="flex flex-col gap-10">
-          {/* Resources */}
-          <div>
-            <ColHeading>Resources</ColHeading>
+          {/* ── Company ─────────────────────────────────────── */}
+          <div className="lg:col-span-2">
+            <ColHeading>Company</ColHeading>
             <ul className="space-y-3">
-              {RESOURCES_LINKS.map(({ label, to }) => (
+              {COMPANY_LINKS.map(({ label, to }) => (
                 <FooterLink key={label} to={to}>{label}</FooterLink>
               ))}
             </ul>
           </div>
 
-          {/* Contact details */}
-          <div>
-            <ColHeading>Contact</ColHeading>
-            <ul className="space-y-3.5">
-              {CONTACT_INFO.map(({ icon: Icon, text, href }) => (
-                <li key={text} className="flex items-start gap-2.5">
-                  <Icon
-                    size={14}
-                    strokeWidth={2}
-                    className="text-slate-600 mt-0.5 shrink-0"
-                  />
-                  {href ? (
-                    <a
-                      href={href}
-                      className="text-sm text-slate-500 hover:text-accent transition-colors duration-200"
-                    >
-                      {text}
-                    </a>
-                  ) : (
-                    <span className="text-sm text-slate-500">{text}</span>
-                  )}
-                </li>
+          {/* ── Services ─────────────────────────────────────── */}
+          <div className="lg:col-span-3">
+            <ColHeading>Services</ColHeading>
+            <ul className="space-y-3">
+              {SERVICES_LINKS.map(({ label, to }) => (
+                <FooterLink key={label} to={to}>{label}</FooterLink>
               ))}
             </ul>
           </div>
-        </div>
 
-      </div>
-    </div>
+          {/* ── Resources + Contact ──────────────────────────── */}
+          <div className="sm:col-span-2 lg:col-span-3 flex flex-col sm:flex-row lg:flex-col gap-10">
+            {/* Resources */}
+            <div>
+              <ColHeading>Resources</ColHeading>
+              <ul className="space-y-3">
+                {RESOURCES_LINKS.map(({ label, to }) => (
+                  <FooterLink key={label} to={to}>{label}</FooterLink>
+                ))}
+              </ul>
+            </div>
 
-    {/* ── Bottom bar ───────────────────────────────────────── */}
-    <div className="border-t border-white/5">
-      <div className="container-site py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-xs text-slate-600">
-          © 2026 Ditechted. All rights reserved.
-        </p>
-        <div className="flex items-center gap-6">
-          <Link
-            to="/privacy"
-            className="text-xs text-slate-600 hover:text-accent transition-colors duration-200"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            to="/terms"
-            className="text-xs text-slate-600 hover:text-accent transition-colors duration-200"
-          >
-            Terms of Service
-          </Link>
+            {/* Contact */}
+            <div>
+              <ColHeading>Contact</ColHeading>
+              <ul className="space-y-3">
+                {CONTACT_INFO.map(({ icon: Icon, text, href }) => (
+                  <li key={text} className="flex items-start gap-2.5">
+                    <Icon size={14} strokeWidth={2} className="text-primary dark:text-accent mt-0.5 shrink-0" />
+                    {href ? (
+                      <a
+                        href={href}
+                        className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-accent transition-colors duration-200 leading-snug"
+                      >
+                        {text}
+                      </a>
+                    ) : (
+                      <span className="text-sm text-slate-600 dark:text-slate-400 leading-snug">{text}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-  </footer>
-);
+
+      {/* ── Bottom bar ───────────────────────────────────────── */}
+      <div className="border-t border-slate-200 dark:border-white/5">
+        <div className="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-slate-400 dark:text-slate-600 text-center sm:text-left">
+            © 2026 Ditechted. All rights reserved.
+          </p>
+          <div className="flex items-center gap-5">
+            <Link
+              to="/privacy"
+              className="text-xs text-slate-400 dark:text-slate-600 hover:text-primary dark:hover:text-accent transition-colors duration-200"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="text-xs text-slate-400 dark:text-slate-600 hover:text-primary dark:hover:text-accent transition-colors duration-200"
+            >
+              Terms of Service
+            </Link>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  );
+};
 
 export default Footer;

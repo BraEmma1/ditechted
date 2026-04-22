@@ -54,9 +54,9 @@ const itemReveal = {
 const TraditionalItem = ({ text }) => (
   <motion.div
     variants={itemReveal}
-    className="flex items-center gap-3.5 py-3.5 border-b border-slate-100 last:border-0"
+    className="flex items-center gap-3.5 py-3.5 border-b border-slate-100 dark:border-slate-700/50 last:border-0"
   >
-    <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+    <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-700/50 flex items-center justify-center shrink-0">
       <X size={12} strokeWidth={2.5} className="text-slate-400" />
     </div>
     <span className="text-[0.9375rem] text-slate-400 font-medium line-through decoration-slate-200">
@@ -69,14 +69,14 @@ const TraditionalItem = ({ text }) => (
 const ModernItem = ({ text }) => (
   <motion.div
     variants={itemReveal}
-    className="flex items-center gap-3.5 py-3.5 border-b border-slate-100 last:border-0 group"
+    className="flex items-center gap-3.5 py-3.5 border-b border-slate-100 dark:border-slate-700/50 last:border-0 group"
   >
     <CheckCircle2
       size={20}
       strokeWidth={2}
       className="shrink-0 text-accent transition-transform duration-300 group-hover:scale-110"
     />
-    <span className="text-[0.9375rem] text-slate-700 font-medium group-hover:text-slate-900 transition-colors duration-200">
+    <span className="text-[0.9375rem] text-slate-700 dark:text-slate-300 font-medium group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-200">
       {text}
     </span>
   </motion.div>
@@ -84,7 +84,7 @@ const ModernItem = ({ text }) => (
 
 // ─── Section ──────────────────────────────────────────────────
 const Comparison = () => (
-  <section className="section bg-slate-50" id="comparison">
+  <section className="section bg-slate-50 dark:bg-slate-900" id="comparison">
     <div className="container-site">
 
       {/* Section header */}
@@ -117,10 +117,10 @@ const Comparison = () => (
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="bg-white rounded-2xl border border-slate-200 overflow-hidden"
+          className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden"
         >
           {/* Column header */}
-          <div className="px-8 py-6 bg-slate-50 border-b border-slate-200">
+          <div className="px-8 py-6 bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
             <p className="text-[0.7rem] text-slate-400 font-semibold uppercase tracking-widest mb-1">
               The Old Way
             </p>
@@ -144,7 +144,7 @@ const Comparison = () => (
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={viewportOnce}
-          className="absolute hidden md:flex left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white border-2 border-slate-200 items-center justify-center shadow-md"
+          className="absolute hidden md:flex left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 items-center justify-center shadow-md"
         >
           <span className="text-[0.65rem] font-black text-slate-400 tracking-wider">VS</span>
         </motion.div>
@@ -155,21 +155,21 @@ const Comparison = () => (
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="bg-white rounded-2xl border border-primary/20 overflow-hidden shadow-[0_8px_40px_rgba(0,113,197,0.08)] relative"
+          className="bg-white dark:bg-slate-800 rounded-2xl border border-primary/20 dark:border-primary/40 overflow-hidden shadow-[0_8px_40px_rgba(0,113,197,0.08)] dark:shadow-[0_8px_40px_rgba(0,113,197,0.15)] relative"
         >
           {/* Top accent line */}
           <div
             className="absolute top-0 inset-x-0 h-1 rounded-t-2xl"
-            style={{ background: 'linear-gradient(90deg, #0071C5, #00C7FC)' }}
+            style={{ background: 'linear-gradient(90deg, var(--brand-primary), var(--brand-accent))' }}
           />
 
           {/* Column header */}
-          <div className="px-8 py-6 border-b border-slate-100 flex items-start justify-between mt-1">
+          <div className="px-8 py-6 border-b border-slate-100 dark:border-slate-700 flex items-start justify-between mt-1">
             <div>
               <p className="text-[0.7rem] font-semibold uppercase tracking-widest mb-1 text-primary">
                 The Ditechted Way
               </p>
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                 Modern IT{' '}
                 <span className="text-primary">(Ditechted)</span>
               </h3>

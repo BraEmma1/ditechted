@@ -81,7 +81,7 @@ const ServiceCard = ({ title, description, icon: Icon, link }) => {
 
 const Services = () => {
   return (
-    <section className="section bg-slate-50 relative overflow-hidden" id="services">
+    <section className="section bg-slate-50 dark:bg-slate-900 relative overflow-hidden" id="services">
       <div className="container-site z-10 relative">
         <motion.div
           variants={staggerContainer}

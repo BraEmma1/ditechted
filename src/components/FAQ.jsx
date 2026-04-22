@@ -47,7 +47,7 @@ const FAQS = [
 // ─── Accordion Item ───────────────────────────────────────────
 const AccordionItem = ({ faq, isOpen, onToggle }) => {
   return (
-    <div className="border-b border-slate-100 last:border-none">
+    <div className="border-b border-slate-100 dark:border-slate-800 last:border-none">
       <button
         type="button"
         className="w-full py-6 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md group"
@@ -55,7 +55,7 @@ const AccordionItem = ({ faq, isOpen, onToggle }) => {
       >
         <span
           className={`text-lg font-semibold transition-colors duration-200 ${
-            isOpen ? 'text-primary' : 'text-slate-800 group-hover:text-primary'
+            isOpen ? 'text-primary' : 'text-slate-800 dark:text-slate-200 group-hover:text-primary'
           }`}
         >
           {faq.question}
@@ -69,7 +69,7 @@ const AccordionItem = ({ faq, isOpen, onToggle }) => {
         */}
         <div 
           className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 ml-4 transition-colors duration-300 ${
-            isOpen ? 'bg-primary/10 text-primary' : 'bg-slate-50 text-slate-400 group-hover:bg-slate-100 group-hover:text-primary'
+            isOpen ? 'bg-primary/10 text-primary' : 'bg-slate-50 dark:bg-slate-800 text-slate-400 dark:text-slate-500 group-hover:bg-slate-100 dark:group-hover:bg-slate-700 group-hover:text-primary'
           }`}
         >
             <motion.div
@@ -123,7 +123,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="section bg-white" id="faq">
+    <section className="section bg-white dark:bg-slate-900" id="faq">
       <div className="container-site">
 
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center mb-12 lg:mb-16">
