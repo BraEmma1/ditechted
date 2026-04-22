@@ -1,0 +1,290 @@
+/* ============================================================
+   DITECHTED — Global Design System
+   Tailwind CSS v4 | Inter Font | IT Consulting
+   ============================================================ */
+
+/* 1. GOOGLE FONTS — Inter
+   Import before @import "tailwindcss" to avoid FOUC
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+
+/* ============================================================
+   2. TAILWIND v4 THEME TOKENS
+   Extends the default theme with Ditechted brand tokens.
+   Access via: text-primary, bg-accent, border-support, etc.
+   ============================================================ */
+@theme {
+  /* --- Brand Colors --- */
+  --color-primary:   #0071C5;   /* Core brand blue */
+  --color-accent:    #00C7FC;   /* Bright cyan accent */
+  --color-support:   #0062AD;   /* Darker blue for depth / hover states */
+
+  /* Semantic aliases for convenience */
+  --color-primary-light: #e6f2fb;  /* Tinted backgrounds */
+  --color-primary-dark:  #004f8a;  /* Deep blue for dark surfaces */
+
+  /* --- Typography --- */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* --- Breakpoints (same as Tailwind defaults, kept explicit) --- */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+
+/* ============================================================
+   3. GLOBAL BASE STYLES
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* ============================================================
+   4. TYPOGRAPHY SYSTEM
+   Reusable semantic classes for consistent heading hierarchy.
+
+   Usage:
+     <h1 className="heading-xl">...</h1>
+     <h2 className="heading-l">...</h2>
+     <h3 className="heading-m">...</h3>
+     <p className="body-text">...</p>
+     <span className="text-muted">...</span>
+   ============================================================ */
+
+/* Hero / Page headline — largest visual impact */
+.heading-xl {
+  font-size: clamp(2.7rem, 5.3vw, 4.55rem); /* 43px → 73px */
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: #0f172a;
+}
+
+/* Section headlines */
+.heading-l {
+  font-size: clamp(2rem, 3.8vw, 3.25rem);   /* 32px → 52px */
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+/* Sub-section / card titles */
+.heading-m {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem); /* 20px → 24px */
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+/* Small callout labels / eyebrow text */
+.heading-s {
+  font-size: 0.875rem;                       /* 14px */
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0071C5;
+}
+
+/* Standard body copy */
+.body-text {
+  font-size: 1.0625rem;                      /* 17px */
+  font-weight: 400;
+  line-height: 1.75;
+  color: #334155;
+}
+
+/* Large body — for lead paragraphs / intro text */
+.body-lead {
+  font-size: 1.125rem;                       /* 18px — readable at all widths */
+  font-weight: 400;
+  line-height: 1.75;
+  color: #4b5563;
+}
+
+/* Supplementary / caption / metadata text */
+.text-muted {
+  font-size: 0.875rem;                       /* 14px */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+
+/* ============================================================
+   5. LAYOUT — CONTAINER & SECTION SPACING
+
+   Usage:
+     <div className="container-site">...</div>
+     <section className="section">...</section>
+     <section className="section-sm">...</section>
+   ============================================================ */
+
+/* Centered, max-width page container */
+.container-site {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;   /* 24px */
+}
+
+@media (min-width: 768px) {
+  .container-site {
+    padding-inline: 2.5rem; /* 40px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-site {
+    padding-inline: 3rem;   /* 48px */
+  }
+}
+
+/* Standard section vertical spacing */
+.section {
+  padding-block: 6rem;      /* 96px */
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 8rem;    /* 128px */
+  }
+}
+
+/* Smaller section for tighter content blocks */
+.section-sm {
+  padding-block: 4rem;      /* 64px */
+}
+
+@media (min-width: 768px) {
+  .section-sm {
+    padding-block: 5rem;    /* 80px */
+  }
+}
+
+
+/* ============================================================
+   6. UTILITY HELPERS
+
+   Misc reusable patterns used throughout components.
+   ============================================================ */
+
+/* Gradient text — brand primary to accent */
+.text-gradient {
+  background: linear-gradient(135deg, #0071C5 0%, #00C7FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle blue-tinted section background */
+.bg-surface {
+  background-color: #f0f7ff;
+}
+
+/* Divider line */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e2e8f0;
+}
+
+/* Premium card — base styles shared by service + value cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #f1f5f9;
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 199, 252, 0.13), 0 4px 16px rgba(0,0,0,0.06);
+  border-color: rgba(0, 199, 252, 0.35);
+}
+
+/* ============================================================
+   7. HOME PAGE RESTYLE (Inspired by provided reference)
+   ============================================================ */
+.home-page {
+  background: linear-gradient(180deg, #f3f8fc 0%, #ffffff 28%, #ffffff 100%);
+}
+
+.home-page .section {
+  padding-block: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  .home-page .section {
+    padding-block: 7rem;
+  }
+}
+
+.home-page #services,
+.home-page #process,
+.home-page #testimonials,
+.home-page #comparison {
+  background-color: #f7fafc;
+}
+
+.home-page #works,
+.home-page #faq {
+  background-color: #ffffff;
+}
+
+.home-page .card,
+.home-page #works .group,
+.home-page #process .group,
+.home-page #testimonials .group {
+  border-color: #e9eff5;
+  box-shadow: 0 8px 30px rgba(2, 20, 38, 0.05);
+}
+
+.home-page #services .card:hover,
+.home-page #works .group:hover,
+.home-page #testimonials .group:hover {
+  transform: translateY(-8px);
+  border-color: #d7e7f5;
+  box-shadow: 0 18px 45px rgba(0, 113, 197, 0.12);
+}
+
+.home-page #cta {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
