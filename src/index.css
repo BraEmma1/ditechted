@@ -103,6 +103,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -114,6 +115,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 img,
@@ -328,8 +330,15 @@ a {
 
 .home-page #services .card:hover,
 .home-page #works .group:hover,
-.home-page #testimonials .group:hover {
+.home-page #testimonials .group:hover,
+.home-page #process .group:hover .card {
   transform: translateY(-8px);
+  border-color: var(--card-border-hover);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Number circle ring inherits the same hover treatment as .card */
+.home-page #process .group:hover .step-ring {
   border-color: var(--card-border-hover);
   box-shadow: var(--card-shadow-hover);
 }

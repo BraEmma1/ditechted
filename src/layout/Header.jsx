@@ -120,7 +120,7 @@ const Header = () => {
               <img
                 src={activeLogo}
                 alt="Ditechted"
-                className="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-6 sm:h-7 md:h-8 w-70 object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 

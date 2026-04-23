@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom';
 import {
   Globe, Mail, Phone, MapPin,
 } from 'lucide-react';
-import logo from '../assets/Logos/DITECTED-14.png';
-import logoDark from '../assets/Logos/DITECTED-15.png';
+import logo from '../assets/Logos/DITECT-14.svg';
+import logoDark from '../assets/Logos/DITECT-15.svg';
 import { useTheme } from '../components/ThemeProvider';
 
 // ─── Link data ────────────────────────────────────────────────
@@ -109,7 +109,7 @@ const Footer = () => {
               <img
                 src={activeLogo}
                 alt="Ditechted"
-                className="h-8 sm:h-9 w-auto object-contain transition-all duration-300"
+                className="h-6 sm:h-7 md:h-8 w-60  mb-2 object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
