@@ -4,7 +4,7 @@ import AboutStory from '../components/AboutStory';
 import MissionVision from '../components/MissionVision';
 import CorePrinciples from '../components/CorePrinciples';
 import Comparison from '../components/Comparison';
-import CoreCapabilities from '../components/CoreCapabilities';
+import ServicesGrid from '../components/ServicesGrid';
 import ResultsMetrics from '../components/ResultsMetrics';
 import Process from '../components/Process';
 import Team from '../components/Team';
@@ -84,7 +84,12 @@ const AboutPage = () => {
         traditionalItems={TRADITIONAL_ITEMS}
         modernItems={MODERN_ITEMS}
       />
-      <CoreCapabilities />
+      <ServicesGrid 
+        variant="capabilities"
+        headingLabel="Core Capabilities"
+        headingTitle="What We Do"
+        headingHighlight="Best"
+      />
       <ResultsMetrics 
         headingTitle="Built on Execution"
         metricsData={ABOUT_METRICS}

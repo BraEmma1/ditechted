@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import PageHero from '../components/PageHero';
-import DetailedServices from '../components/DetailedServices';
+import ServicesGrid from '../components/ServicesGrid';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Process from '../components/Process';
 import FAQ from '../components/FAQ';
@@ -15,7 +15,12 @@ const ServicesPage = () => {
   return (
     <main className="services-page">
       <PageHero />
-      <DetailedServices />
+      <ServicesGrid 
+        variant="detailed"
+        headingLabel="What We Build"
+        headingTitle="End-to-end systems engineered to improve operations, increase revenue, and"
+        headingHighlight="accelerate growth."
+      />
       <WhyChooseUs />
       <Process />
       <FAQ />

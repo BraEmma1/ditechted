@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import PageHero from '../components/PageHero';
 import ResultsMetrics from '../components/ResultsMetrics';
-import CaseStudiesGrid from '../components/CaseStudiesGrid';
+import PortfolioGrid from '../components/PortfolioGrid';
 import PerformanceFramework from '../components/PerformanceFramework';
 import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
@@ -50,7 +50,14 @@ const CaseStudiesPage = () => {
         subheadline="Explore how Ditechted helps businesses grow through AI systems, custom software, automation, websites, and digital growth strategies."
       />
       <ResultsMetrics />
-      <CaseStudiesGrid />
+      <PortfolioGrid 
+        variant="detailed"
+        showFilters={true}
+        headingLabel={null}
+        headingTitle={null}
+        headingHighlight={null}
+        subheading={null}
+      />
       <PerformanceFramework />
       <Testimonials 
         headingLabel="What Clients Say"
