@@ -83,7 +83,18 @@ const ModernItem = ({ text }) => (
 );
 
 // ─── Section ──────────────────────────────────────────────────
-const Comparison = () => (
+const Comparison = ({
+  headingLabel = "Why Ditechted",
+  headingTitle = "Traditional Agencies vs",
+  headingHighlight = "Ditechted",
+  subheading = "The difference between an outdated agency and a results-driven technology partner is more than tools — it's a systems mindset.",
+  traditionalHeader = "Traditional Agencies",
+  traditionalSub = "The Old Way",
+  modernHeader = "Ditechted",
+  modernSub = "The Modern Standard",
+  traditionalItems = TRADITIONAL_ITEMS,
+  modernItems = MODERN_ITEMS
+}) => (
   <section className="section bg-slate-50 dark:bg-slate-900" id="comparison">
     <div className="container-site">
 
@@ -96,14 +107,14 @@ const Comparison = () => (
         className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16"
       >
         <motion.div variants={fadeInUp}>
-          <span className="heading-s">Why Ditechted</span>
+          <span className="heading-s">{headingLabel}</span>
         </motion.div>
         <motion.h2 variants={fadeInUp} className="heading-l mt-4">
-          Traditional Agencies vs{' '}
-          <span className="text-primary">Ditechted</span>
+          {headingTitle}{' '}
+          <span className="text-primary">{headingHighlight}</span>
         </motion.h2>
         <motion.p variants={fadeInUp} className="body-lead mt-5">
-          The difference between an outdated agency and a results-driven technology partner is more than tools — it's a systems mindset.
+          {subheading}
         </motion.p>
       </motion.div>
 
@@ -121,9 +132,9 @@ const Comparison = () => (
           {/* Column header */}
           <div className="px-8 py-6 bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
             <p className="text-[0.7rem] text-slate-400 font-semibold uppercase tracking-widest mb-1">
-              The Old Way
+              {traditionalSub}
             </p>
-            <h3 className="text-xl font-bold text-slate-400">Traditional Agencies</h3>
+            <h3 className="text-xl font-bold text-slate-400">{traditionalHeader}</h3>
           </div>
 
           {/* Items */}
@@ -131,7 +142,7 @@ const Comparison = () => (
             variants={staggerItems}
             className="px-8 py-2"
           >
-            {TRADITIONAL_ITEMS.map((item) => (
+            {traditionalItems.map((item) => (
               <TraditionalItem key={item} text={item} />
             ))}
           </motion.div>
@@ -166,11 +177,10 @@ const Comparison = () => (
           <div className="px-8 py-6 border-b border-slate-100 dark:border-slate-700 flex items-start justify-between mt-1">
             <div>
               <p className="text-[0.7rem] font-semibold uppercase tracking-widest mb-1 text-primary">
-                The Ditechted Way
+                {modernSub}
               </p>
               <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
-                The Ditechted{' '}
-                <span className="text-primary">Way</span>
+                {modernHeader}
               </h3>
             </div>
             {/* Recommended badge */}
@@ -184,7 +194,7 @@ const Comparison = () => (
             variants={staggerItems}
             className="px-8 py-2"
           >
-            {MODERN_ITEMS.map((item) => (
+            {modernItems.map((item) => (
               <ModernItem key={item} text={item} />
             ))}
           </motion.div>

@@ -14,32 +14,32 @@ import { fadeInUp, staggerContainer, viewportOnce } from '../lib/animations';
 const FAQS = [
   {
     id: 1,
-    question: 'How long does a project take?',
+    question: 'How long does a typical project take?',
     answer: 'Timelines vary based on scope. A website or chatbot typically takes 2–4 weeks, while a full SaaS platform or AI system can take 6–12 weeks. We define clear milestones during the discovery phase so you always know what to expect.',
   },
   {
     id: 2,
-    question: 'Can you build custom software for my business?',
+    question: 'Can you build custom systems for my business?',
     answer: 'Absolutely. Custom software is one of our core specialties. We build SaaS platforms, dashboards, portals, and internal tools tailored precisely to your business model, workflows, and goals.',
   },
   {
     id: 3,
-    question: 'Do you provide support after launch?',
+    question: 'Do you offer support after launch?',
     answer: 'Yes. We offer post-launch support retainers covering maintenance, performance monitoring, updates, and iterative improvements to ensure your systems continue to perform and grow with your business.',
   },
   {
     id: 4,
-    question: 'Can you run our ads and marketing too?',
-    answer: 'Yes. Our digital marketing services include Meta (Facebook/Instagram) ads, Google ads, social media management, and conversion-focused copywriting. We align every campaign with your business growth goals.',
-  },
-  {
-    id: 5,
-    question: 'Can AI be integrated into our current systems?',
+    question: 'Can you integrate AI into our current operations?',
     answer: 'In most cases, yes. We audit your existing setup and identify the best integration points for AI — whether that\'s automating support, qualifying leads, summarising data, or triggering workflows. We work with what you already have.',
   },
   {
+    id: 5,
+    question: 'Can you run marketing campaigns too?',
+    answer: 'Yes. Our digital marketing services include Meta (Facebook/Instagram) ads, Google ads, social media management, and conversion-focused copywriting. We align every campaign with your business growth goals.',
+  },
+  {
     id: 6,
-    question: 'How do we get started?',
+    question: 'How do we begin?',
     answer: 'It starts with a free discovery consultation. Reach out via our contact page to book a call. We\'ll discuss your goals, identify the right systems, and outline a clear plan forward — no commitment required.',
   },
 ];
@@ -114,7 +114,11 @@ const AccordionItem = ({ faq, isOpen, onToggle }) => {
 };
 
 // ─── Section ──────────────────────────────────────────────────
-const FAQ = () => {
+const FAQ = ({
+  heading = "Frequently Asked Questions",
+  subheading = "Everything you need to know before starting a project with us.",
+  faqs = FAQS
+}) => {
   // Only one item open at a time; null means all closed
   const [openId, setOpenId] = useState(null);
 
@@ -138,11 +142,11 @@ const FAQ = () => {
             </motion.div>
             
             <motion.h2 variants={fadeInUp} className="heading-l mt-4">
-              Frequently Asked Questions
+              {heading}
             </motion.h2>
             
             <motion.p variants={fadeInUp} className="body-lead mt-5">
-              Everything you need to know before starting a project with us.
+              {subheading}
             </motion.p>
           </motion.div>
         </div>
@@ -154,7 +158,7 @@ const FAQ = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="max-w-3xl mx-auto"
         >
-          {FAQS.map((faq) => (
+          {faqs.map((faq) => (
             <AccordionItem
               key={faq.id}
               faq={faq}

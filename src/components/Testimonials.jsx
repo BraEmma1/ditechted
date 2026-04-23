@@ -91,7 +91,13 @@ const TestimonialCard = ({ quote, name, role, company, avatar, accent }) => (
 );
 
 // ─── Section ──────────────────────────────────────────────────
-const Testimonials = () => (
+const Testimonials = ({
+  headingLabel = "Testimonials",
+  headingTitle = "Trusted by Businesses",
+  headingHighlight = "Ready to Grow",
+  subheading = "Here's what businesses we've worked with have to say about their results.",
+  testimonialsData = TESTIMONIALS
+}) => (
   <section className="section bg-slate-50 dark:bg-slate-900" id="testimonials">
     <div className="container-site">
 
@@ -104,14 +110,14 @@ const Testimonials = () => (
         className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16"
       >
         <motion.div variants={fadeInUp}>
-          <span className="heading-s">Testimonials</span>
+          <span className="heading-s">{headingLabel}</span>
         </motion.div>
         <motion.h2 variants={fadeInUp} className="heading-l mt-4">
-          Trusted by Businesses{' '}
-          <span className="text-primary">Ready to Grow</span>
+          {headingTitle}{' '}
+          {headingHighlight && <span className="text-primary">{headingHighlight}</span>}
         </motion.h2>
         <motion.p variants={fadeInUp} className="body-lead mt-5">
-          Here's what businesses we've worked with have to say about their results.
+          {subheading}
         </motion.p>
       </motion.div>
 
@@ -123,7 +129,7 @@ const Testimonials = () => (
         viewport={viewportOnce}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
       >
-        {TESTIMONIALS.map((t) => (
+        {testimonialsData.map((t) => (
           <TestimonialCard key={t.id} {...t} />
         ))}
       </motion.div>

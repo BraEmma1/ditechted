@@ -12,7 +12,13 @@ import { ArrowRight, CalendarDays } from 'lucide-react';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/animations';
 
 // ─── Section ──────────────────────────────────────────────────
-const CTA = () => (
+const CTA = ({
+  headline = <>Talk to an <span className="text-white">expert</span></>,
+  subheadline = "Let's help you grow with AI, software, websites, and marketing systems built for real results.",
+  primaryBtnText = "Start a Project",
+  secondaryBtnText = "Book a Consultation",
+  trustText = "No commitment required · Response within 24 hours · Free initial consultation"
+}) => (
   <motion.section
     id="cta"
     className="relative overflow-hidden"
@@ -85,13 +91,12 @@ const CTA = () => (
           </span>
         </motion.div>
 
-        {/* Headline */}
         <motion.h2
           variants={fadeInUp}
           className="text-white font-black leading-[1.04] tracking-[-0.03em]"
           style={{ fontSize: 'clamp(2.75rem, 6vw, 5rem)', maxWidth: '700px' }}
         >
-          Talk to an <span className="text-white">expert</span>
+          {headline}
         </motion.h2>
 
         {/* Subtext */}
@@ -99,8 +104,7 @@ const CTA = () => (
           variants={fadeInUp}
           className="mt-6 text-[1.0625rem] text-blue-50 leading-relaxed max-w-lg font-medium"
         >
-          Let's help you grow with AI, software, websites, and marketing
-          systems built for real results.
+          {subheadline}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -123,7 +127,7 @@ const CTA = () => (
               'active:scale-95',
             ].join(' ')}
           >
-            Start a Project
+            {primaryBtnText}
             <ArrowRight size={17} strokeWidth={2.5} />
           </Link>
 
@@ -144,7 +148,7 @@ const CTA = () => (
             ].join(' ')}
           >
             <CalendarDays size={17} strokeWidth={2} />
-            Book a Consultation
+            {secondaryBtnText}
           </Link>
         </motion.div>
 
@@ -153,7 +157,7 @@ const CTA = () => (
           variants={fadeInUp}
           className="mt-8 text-[0.75rem] font-semibold tracking-wide text-blue-100/80"
         >
-          No commitment required · Response within 24 hours · Free initial consultation
+          {trustText}
         </motion.p>
 
       </motion.div>

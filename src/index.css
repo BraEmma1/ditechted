@@ -134,6 +134,16 @@ a {
    5. TYPOGRAPHY SYSTEM
    ============================================================ */
 
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3 rounded-md bg-primary text-white text-[0.9375rem] font-semibold shadow-sm transition-all duration-200 hover:bg-support active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-7 py-3 rounded-md bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[0.9375rem] font-semibold border border-slate-200 dark:border-slate-700 transition-all duration-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-white active:scale-95;
+  }
+}
+
 .heading-xl {
   font-size: clamp(2.4rem, 5.3vw, 4.55rem); /* 43px → 73px */
   font-weight: 900;

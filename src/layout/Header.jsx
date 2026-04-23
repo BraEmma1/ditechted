@@ -15,8 +15,8 @@ import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/Logos/DITECTED-14.png";
-import logoDark from "../assets/Logos/DITECTED-15.png";
+import logo from "../assets/Logos/DITECT-14.svg";
+import logoDark from "../assets/Logos/DITECT-15.svg";
 import { ThemeToggle } from "../components/ThemeToggle";
 import { useTheme } from "../components/ThemeProvider";
 

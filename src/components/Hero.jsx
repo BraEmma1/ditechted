@@ -6,14 +6,17 @@
  * Right: animated dark dashboard / tech visual
  */
 
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
-  ArrowRight, ChevronRight,
-  Shield, TrendingUp, Zap,
-} from 'lucide-react';
-import { fadeInUp, staggerContainer } from '../lib/animations';
-import ParticleBackground from './ParticleBackground';
+  ArrowRight,
+  ChevronRight,
+  Shield,
+  TrendingUp,
+  Zap,
+} from "lucide-react";
+import { fadeInUp, staggerContainer } from "../lib/animations";
+import ParticleBackground from "./ParticleBackground";
 
 // ─── Reusable helpers ─────────────────────────────────────────
 
@@ -36,7 +39,9 @@ const StatBadge = ({ icon: Icon, label, value, iconBg, delay, style }) => (
       <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider leading-none mb-0.5">
         {label}
       </p>
-      <p className="text-sm font-bold text-slate-800 dark:text-slate-100 leading-tight">{value}</p>
+      <p className="text-sm font-bold text-slate-800 dark:text-slate-100 leading-tight">
+        {value}
+      </p>
     </div>
   </motion.div>
 );
@@ -46,15 +51,26 @@ const ProgressBar = ({ label, value, width, delay }) => (
   <div>
     <div className="flex justify-between mb-1.5">
       <span className="text-[11px] text-slate-400 font-medium">{label}</span>
-      <span className="text-[11px] font-mono font-bold" style={{ color: 'var(--brand-accent)' }}>{value}</span>
+      <span
+        className="text-[11px] font-mono font-bold"
+        style={{ color: "var(--brand-accent)" }}
+      >
+        {value}
+      </span>
     </div>
-    <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
+    <div
+      className="h-1.5 rounded-full overflow-hidden"
+      style={{ background: "rgba(255,255,255,0.08)" }}
+    >
       <motion.div
         initial={{ width: 0 }}
         animate={{ width }}
-        transition={{ delay, duration: 1.2, ease: 'easeOut' }}
+        transition={{ delay, duration: 1.2, ease: "easeOut" }}
         className="h-full rounded-full"
-        style={{ background: 'linear-gradient(90deg, var(--brand-primary), var(--brand-accent))' }}
+        style={{
+          background:
+            "linear-gradient(90deg, var(--brand-primary), var(--brand-accent))",
+        }}
       />
     </div>
   </div>
@@ -67,13 +83,12 @@ const HeroVisual = () => {
   return (
     /* Outer container — enough padding for overflowing badges */
     <div className="relative w-full flex items-center justify-center min-h-[500px] px-14 py-10">
-
       {/* Radial glow backdrop */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 70% at 55% 50%, rgba(0,113,197,0.09) 0%, transparent 70%)',
+            "radial-gradient(ellipse 80% 70% at 55% 50%, rgba(0,113,197,0.09) 0%, transparent 70%)",
         }}
       />
 
@@ -81,27 +96,29 @@ const HeroVisual = () => {
       <div
         className="absolute inset-0 opacity-40 dark:opacity-20 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle, #cbd5e1 1px, transparent 1px)',
-          backgroundSize: '22px 22px',
+          backgroundImage:
+            "radial-gradient(circle, #cbd5e1 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
         }}
       />
 
       {/* Floating wrapper — subtle vertical bob */}
       <motion.div
         animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
         className="relative z-10 w-full max-w-[400px]"
       >
-
         {/* ── Dashboard card ─────────────────────────────── */}
         <div
           className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.25)]"
-          style={{ background: 'linear-gradient(160deg, #0f172a 0%, #0c1624 100%)' }}
+          style={{
+            background: "linear-gradient(160deg, #0f172a 0%, #0c1624 100%)",
+          }}
         >
           {/* Chrome bar */}
           <div
             className="flex items-center gap-2 px-4 py-3 border-b"
-            style={{ borderColor: 'rgba(255,255,255,0.07)' }}
+            style={{ borderColor: "rgba(255,255,255,0.07)" }}
           >
             <div className="flex gap-1.5">
               <div className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
@@ -117,24 +134,32 @@ const HeroVisual = () => {
                 transition={{ duration: 2.2, repeat: Infinity }}
                 className="w-1.5 h-1.5 rounded-full bg-green-400"
               />
-              <span className="text-[11px] text-green-400 font-medium">Live</span>
+              <span className="text-[11px] text-green-400 font-medium">
+                Live
+              </span>
             </div>
           </div>
 
           {/* Card content */}
           <div className="p-5 space-y-5">
-
             {/* Header row */}
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
                   System Overview
                 </p>
-                <p className="text-white font-semibold text-sm mt-0.5">Q2 2025 Report</p>
+                <p className="text-white font-semibold text-sm mt-0.5">
+                  Q2 2025 Report
+                </p>
               </div>
               <div className="text-right">
-                <p className="text-[10px] text-slate-500 font-medium">Global Uptime</p>
-                <p className="text-sm font-bold font-mono" style={{ color: 'var(--brand-accent)' }}>
+                <p className="text-[10px] text-slate-500 font-medium">
+                  Global Uptime
+                </p>
+                <p
+                  className="text-sm font-bold font-mono"
+                  style={{ color: "var(--brand-accent)" }}
+                >
                   99.9%
                 </p>
               </div>
@@ -142,9 +167,24 @@ const HeroVisual = () => {
 
             {/* Progress bars */}
             <div className="space-y-3.5">
-              <ProgressBar label="Automation Efficiency" value="+68%"    width="68%"  delay={0.6} />
-              <ProgressBar label="Lead Conversion"        value="+42%"    width="42%"  delay={0.8} />
-              <ProgressBar label="Growth Readiness"       value="100%"    width="100%" delay={1.0} />
+              <ProgressBar
+                label="Automation Efficiency"
+                value="+68%"
+                width="68%"
+                delay={0.6}
+              />
+              <ProgressBar
+                label="Lead Conversion"
+                value="+42%"
+                width="42%"
+                delay={0.8}
+              />
+              <ProgressBar
+                label="Growth Readiness"
+                value="100%"
+                width="100%"
+                delay={1.0}
+              />
             </div>
 
             {/* Bar chart — Monthly Growth */}
@@ -152,11 +192,19 @@ const HeroVisual = () => {
               <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-3">
                 Monthly Growth
               </p>
-              <div className="flex items-end gap-1.5" style={{ height: '56px' }}>
+              <div
+                className="flex items-end gap-1.5"
+                style={{ height: "56px" }}
+              >
                 {chartBars.map((h, i) => (
                   <div
                     key={i}
-                    style={{ flex: 1, height: '100%', display: 'flex', alignItems: 'flex-end' }}
+                    style={{
+                      flex: 1,
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "flex-end",
+                    }}
                   >
                     <motion.div
                       initial={{ height: 0 }}
@@ -164,15 +212,15 @@ const HeroVisual = () => {
                       transition={{
                         delay: 0.7 + i * 0.07,
                         duration: 0.55,
-                        ease: 'easeOut',
+                        ease: "easeOut",
                       }}
                       style={{
-                        width: '100%',
-                        borderRadius: '3px 3px 0 0',
+                        width: "100%",
+                        borderRadius: "3px 3px 0 0",
                         background:
                           i === 5
-                            ? 'linear-gradient(to top, var(--brand-primary), var(--brand-accent))'
-                            : 'rgba(0, 113, 197, 0.22)',
+                            ? "linear-gradient(to top, var(--brand-primary), var(--brand-accent))"
+                            : "rgba(0, 113, 197, 0.22)",
                       }}
                     />
                   </div>
@@ -182,24 +230,25 @@ const HeroVisual = () => {
 
             {/* Tag strip */}
             <div className="flex items-center gap-2 flex-wrap">
-              {['AI Powered', 'Scalable', 'Conversion Ready', 'Secure'].map((tag, i) => (
-                <motion.span
-                  key={tag}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.3 + i * 0.08 }}
-                  className="text-[10px] font-semibold px-2.5 py-1 rounded-full"
-                  style={{
-                    background: 'rgba(0,113,197,0.18)',
-                    color: 'var(--brand-accent)',
-                    border: '1px solid rgba(0,199,252,0.2)',
-                  }}
-                >
-                  {tag}
-                </motion.span>
-              ))}
+              {["AI Powered", "Scalable", "Conversion Ready", "Secure"].map(
+                (tag, i) => (
+                  <motion.span
+                    key={tag}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.3 + i * 0.08 }}
+                    className="text-[10px] font-semibold px-2.5 py-1 rounded-full"
+                    style={{
+                      background: "rgba(0,113,197,0.18)",
+                      color: "var(--brand-accent)",
+                      border: "1px solid rgba(0,199,252,0.2)",
+                    }}
+                  >
+                    {tag}
+                  </motion.span>
+                ),
+              )}
             </div>
-
           </div>
         </div>
 
@@ -210,7 +259,7 @@ const HeroVisual = () => {
           value="All Systems Secure"
           iconBg="#22c55e"
           delay={1.0}
-          style={{ top: '-22px', left: '-56px', zIndex: 20 }}
+          style={{ top: "-22px", left: "-56px", zIndex: 20 }}
         />
 
         {/* ── Floating badge — bottom-right ─────────────── */}
@@ -220,7 +269,7 @@ const HeroVisual = () => {
           value="+42% YoY"
           iconBg="var(--brand-primary)"
           delay={1.2}
-          style={{ bottom: '-20px', right: '-52px', zIndex: 20 }}
+          style={{ bottom: "-20px", right: "-52px", zIndex: 20 }}
         />
 
         {/* ── Floating badge — middle-right ─────────────── */}
@@ -230,9 +279,13 @@ const HeroVisual = () => {
           value="2× Faster"
           iconBg="#7c3aed"
           delay={1.4}
-          style={{ top: '50%', right: '-60px', transform: 'translateY(-50%)', zIndex: 20 }}
+          style={{
+            top: "50%",
+            right: "-60px",
+            transform: "translateY(-50%)",
+            zIndex: 20,
+          }}
         />
-
       </motion.div>
     </div>
   );
@@ -244,8 +297,8 @@ const Hero = () => {
     <section
       className="relative overflow-hidden bg-[linear-gradient(160deg,#f5f9ff_0%,#ffffff_55%,#f0f7ff_100%)] dark:bg-[linear-gradient(160deg,#0f172a_0%,#0c1624_55%,#0f172a_100%)]"
       style={{
-        paddingTop: '5rem',
-        paddingBottom: '6rem',
+        paddingTop: "5rem",
+        paddingBottom: "6rem",
       }}
     >
       {/* Interactive Premium Particle Canvas */}
@@ -257,7 +310,7 @@ const Hero = () => {
         className="absolute -top-48 -right-48 w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(0,199,252,0.10) 0%, transparent 65%)',
+            "radial-gradient(circle, rgba(0,199,252,0.10) 0%, transparent 65%)",
         }}
       />
       <div
@@ -265,13 +318,12 @@ const Hero = () => {
         className="absolute -bottom-36 -left-36 w-[560px] h-[560px] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(0,113,197,0.09) 0%, transparent 65%)',
+            "radial-gradient(circle, rgba(0,113,197,0.09) 0%, transparent 65%)",
         }}
       />
 
       <div className="container-site relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20 items-center">
-
           {/* ── Left: Text Content ─────────────────────────── */}
           <motion.div
             variants={staggerContainer}
@@ -287,12 +339,8 @@ const Hero = () => {
             </motion.div>
 
             {/* Headline */}
-            <motion.h1
-              variants={fadeInUp}
-              className="heading-xl mt-4 lg:mt-5"
-            >
-              We Build{' '}
-              <span className="text-primary">AI Systems,</span>{' '}
+            <motion.h1 variants={fadeInUp} className="heading-xl mt-4 lg:mt-5">
+              We Build <span className="text-primary">AI Systems,</span>{" "}
               Software &amp; Growth Engines
             </motion.h1>
 
@@ -301,9 +349,9 @@ const Hero = () => {
               variants={fadeInUp}
               className="body-lead-sm mt-5 lg:mt-6 max-w-[500px]"
             >
-              From intelligent automation to custom platforms and high-converting
-              websites, we help modern businesses scale faster with technology
-              that works.
+              From intelligent automation to custom platforms and
+              high-converting websites, we help modern businesses scale faster
+              with technology that works.
             </motion.p>
 
             {/* Trust Indicators
@@ -337,14 +385,14 @@ const Hero = () => {
                 to="/contact"
                 id="hero-cta-primary"
                 className={[
-                  'inline-flex items-center justify-center gap-2',
-                  'px-7 py-3 rounded-md w-full sm:w-auto',
-                  'bg-primary text-white text-[0.9375rem] font-semibold',
-                  'shadow-sm',
-                  'transition-all duration-200',
-                  'hover:bg-support',
-                  'active:scale-95',
-                ].join(' ')}
+                  "inline-flex items-center justify-center gap-2",
+                  "px-7 py-3 rounded-md w-full sm:w-auto",
+                  "bg-primary text-white text-[0.9375rem] font-semibold",
+                  "shadow-sm",
+                  "transition-all duration-200",
+                  "hover:bg-support",
+                  "active:scale-95",
+                ].join(" ")}
               >
                 Start a Project
               </Link>
@@ -354,30 +402,29 @@ const Hero = () => {
                 to="/case-studies"
                 id="hero-cta-secondary"
                 className={[
-                  'inline-flex items-center justify-center gap-2',
-                  'px-7 py-3 rounded-md w-full sm:w-auto',
-                  'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[0.9375rem] font-semibold',
-                  'border border-slate-200 dark:border-slate-700',
-                  'transition-all duration-200',
-                  'hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-white',
-                  'active:scale-95',
-                ].join(' ')}
+                  "inline-flex items-center justify-center gap-2",
+                  "px-7 py-3 rounded-md w-full sm:w-auto",
+                  "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[0.9375rem] font-semibold",
+                  "border border-slate-200 dark:border-slate-700",
+                  "transition-all duration-200",
+                  "hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-white",
+                  "active:scale-95",
+                ].join(" ")}
               >
                 View Case Studies
-                <ArrowRight size={16} strokeWidth={2} className="text-slate-400" />
+                <ArrowRight
+                  size={16}
+                  strokeWidth={2}
+                  className="text-slate-400"
+                />
               </Link>
             </motion.div>
           </motion.div>
 
           {/* ── Right: Dashboard Visual ─────────────────────── */}
-          <motion.div
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-          >
+          <motion.div variants={fadeInUp} initial="hidden" animate="visible">
             <HeroVisual />
           </motion.div>
-
         </div>
       </div>
     </section>

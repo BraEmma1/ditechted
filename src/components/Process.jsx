@@ -15,42 +15,47 @@ const PROCESS_STEPS = [
     num: "01",
     title: "Discovery",
     bullets: [
-      "Understanding your business goals",
-      "Identifying key opportunities",
-      "Mapping the right approach",
+      "Understand your goals",
+      "Analyze current systems",
+      "Identify growth blockers",
     ],
   },
   {
     num: "02",
-    title: "Strategy & Planning",
+    title: "Strategy",
     bullets: [
-      "Choosing the right systems & tools",
-      "Building the roadmap",
-      "Aligning on deliverables",
+      "Design the roadmap",
+      "Select the right tools",
+      "Define execution plan",
     ],
   },
   {
     num: "03",
-    title: "Build & Launch",
+    title: "Build",
     bullets: [
-      "Developing high-performance solutions",
-      "Testing and quality assurance",
-      "Deploying with precision",
+      "Develop custom solutions",
+      "Rigorous testing & QA",
+      "Launch and deploy",
     ],
   },
   {
     num: "04",
-    title: "Optimize & Scale",
+    title: "Optimize",
     bullets: [
-      "Continuous improvements",
-      "Data analysis & insights",
-      "Growth support & iteration",
+      "Improve performance",
+      "Automate further",
+      "Scale operations",
     ],
   },
 ];
 
 // ─── Component ────────────────────────────────────────────────
-const Process = () => (
+const Process = ({
+  headingTitle = "Our Proven",
+  headingHighlight = "Process",
+  subheading = "We don't just write code — we build scalable business systems designed for long-term growth.",
+  processSteps = PROCESS_STEPS
+}) => (
   <section className="section bg-slate-50 dark:bg-slate-900" id="process">
     <div className="container-site">
       {/* Section header */}
@@ -66,12 +71,11 @@ const Process = () => (
         </motion.div>
 
         <motion.h2 variants={fadeInUp} className="heading-l mt-5">
-          How We Work
+          {headingTitle} <span className="text-primary">{headingHighlight}</span>
         </motion.h2>
 
         <motion.p variants={fadeInUp} className="body-lead mt-6 max-w-2xl">
-          From discovery to deployment, we follow a clear, strategic process to
-          deliver results without guesswork.
+          {subheading}
         </motion.p>
       </motion.div>
 
@@ -89,7 +93,7 @@ const Process = () => (
           aria-hidden="true"
         />
 
-        {PROCESS_STEPS.map((step, idx) => (
+        {processSteps.map((step, idx) => (
           <motion.div
             key={step.num}
             variants={fadeInUp}
